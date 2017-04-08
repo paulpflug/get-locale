@@ -1,0 +1,41 @@
+{
+  "name": "get-locale",
+  "description": "versatile locale parser",
+  "version": "0.0.1",
+  "homepage": "https://github.com/paulpflug/",
+  "author": {
+    "name": "Paul Pflugradt",
+    "email": "paul.pflugradt@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paulpflug/get-locale"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "getLocale.js",
+  "files": [
+    "*.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "autodev": "^0.0.1",
+    "coffeescript": "^2.0.0-alpha1",
+    "koa": "^2.2.0"
+  },
+  "keywords": [
+    "koa",
+    "locale"
+  ],
+  "readmeFilename": "README.md",
+  "scripts": {
+    "build": "coffee --no-header --compile --output ./ src/*.coffee",
+    "dev": "autodev ./dev/server.coffee",
+    "test": "",
+    "preversion": "npm run test",
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags && npm publish"
+  }
+}
